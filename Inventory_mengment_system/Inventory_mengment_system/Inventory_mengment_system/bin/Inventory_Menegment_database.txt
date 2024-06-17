@@ -1,0 +1,58 @@
+CREATE TABLE Goods
+(
+Id INT PRIMARY KEY IDENTITY,
+[NameOfGood] NVARCHAR(MAX) NOT NULL,
+[Category] NVARCHAR(25) NOT NULL,
+[Sum] INT NOT NULL,
+[Min] INT NOT NULL,
+[Now] INT NOT NULL,
+[Max] INT NOT NULL
+)
+
+GO
+
+CREATE TABLE SoldGoods
+(
+Id INT PRIMARY KEY IDENTITY,
+[NameOfGood] NVARCHAR(MAX) NOT NULL,
+[Category] NVARCHAR(25) NOT NULL,
+[Now] INT NOT NULL,
+[Sum] INT NOT NULL
+)
+
+GO
+
+CREATE TABLE Orders
+(
+Id INT PRIMARY KEY IDENTITY,
+[NameOfOrder] NVARCHAR(MAX) NOT NULL,
+[Name] NVARCHAR (20) NOT NULL,
+[SurName] NVARCHAR (20) NOT NULL,
+Cont NVARCHAR(25) NOT NULL,
+[Sum] INT NOT NULL,
+Stat INT NOT NULL,
+Goode NVARCHAR(MAX) NOT NULL
+)
+
+GO
+
+CREATE TABLE CompOreders
+(
+Id INT PRIMARY KEY IDENTITY,
+[NameOfOrder] NVARCHAR(MAX) NOT NULL,
+[Name] NVARCHAR (20) NOT NULL,
+[SurName] NVARCHAR (20) NOT NULL,
+Cont NVARCHAR(25) NOT NULL,
+[Sum] INT NOT NULL,
+Stat INT NOT NULL,
+Goode NVARCHAR(MAX) NOT NULL
+)
+DROP TABLE Goods,CompOreders,Orders,SoldGoods
+--DROP TABLE Goods,SoldGoods,Orders,CompOreders
+
+
+---Запросы
+SELECT [Max] FROM Goods WHERE [NameOfGood] ='ggg' and [Now] <= [Max]
+INSERT INTO Goods VALUES('fff','ttt',134,10,'',20+35) 
+
+SELECT [Category] FROM Goods WHERE 'Гречка' = [NameOfGood]
